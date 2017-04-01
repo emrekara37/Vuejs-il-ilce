@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Js </title>
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript" src="app.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+<div class="app" style="margin-top:50px">
+     <b>İl Seçiniz</b>
+	 <select class="form-control col-md-3"
+ 		v-model="selected"
+ 		v-on:change="ilceleriGetir()"
+	  >
+	 
+	 	<option v-for="list in iller" 
+	 		v-bind:value="list.id">
+	 		{{list.il_ad}}
+	 	</option>
+	 </select>
+	 	<div v-if="ilSecildi"  style="margin-top:50px">
+	 	<b> İlçe Seçiniz</b>
+	 <select  class="form-control col-md-3">
+	 	<option v-for="list in ilceler" 
+	 		v-bind:value="list.id">
+	 		{{list.ilce_ad}}
+	 	</option>
+	 </select>
+</div>
+
+</div>
+
+
+</body>
+</html>
